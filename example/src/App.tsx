@@ -7,6 +7,7 @@ import type { HeaderBackButtonProps } from "@react-navigation/elements";
 import { HeaderBackButton } from "@react-navigation/elements";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { FiberProvider } from "its-fine";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import {
   AnimationExample,

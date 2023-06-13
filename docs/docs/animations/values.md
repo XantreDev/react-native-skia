@@ -8,6 +8,7 @@ slug: /animations/values
 :::info
 
 Currently, built-in Skia animations are dependant on the JS thread.
+For UI-thread animations with Reanimated 3, see [Reanimated support](/docs/animations/reanimated).
 
 :::
 
@@ -97,7 +98,7 @@ const Demo = () => {
 
 ## Canvas Size
 
-The `onSize` property will update the provided Skia Value with the current canvas size when the Canvas is resized.
+The `onSize` property will update the provided Skia Value with the current canvas size when the Canvas is resized. This property can also be a Reanimated shared value (see [reanimated integration](/docs/animations/reanimated)).
 
 ```tsx twoslash
 import React from "react";

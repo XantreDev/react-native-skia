@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 
-import type { SharedValueType } from "./moduleWrapper";
+import type { SharedValueType } from "../../renderer/processors/Animations";
+
 import {
-  HAS_REANIMATED,
+  HAS_REANIMATED2,
   useSharedValue,
   runOnJS,
   startMapper,
   stopMapper,
+  HAS_REANIMATED3,
 } from "./moduleWrapper";
 
 /**
@@ -20,14 +22,16 @@ export const useSharedValueEffect = <T = number>(
   value: SharedValueType<T>,
   ...values: SharedValueType<T>[]
 ) => {
-  console.warn(
-    `useSharedValueEffect() is now deprecated, you can use Reanimated values directly.
-Learn more at https://shopify.github.io/react-native-skia/.`
-  );
+  if (HAS_REANIMATED3) {
+    console.warn(
+      `useSharedValueEffect() is deprecated with Reanimated 3, you can use Reanimated values directly.
+Learn more at https://shopify.github.io/react-native-skia/docs/animations/reanimated.`
+    );
+  }
   const input = useSharedValue(0);
 
   useEffect(() => {
-    if (!HAS_REANIMATED) {
+    if (!HAS_REANIMATED2) {
       console.warn(
         "Reanimated was not found and the useSharedValueEffect hook will have no effect."
       );
