@@ -1,4 +1,3 @@
-import type { SharedValueType } from "../../../external/reanimated/moduleWrapper";
 import type { SkiaSelector, SkiaValue } from "../../../values";
 
 export type SharedValueType<T = number> = {
